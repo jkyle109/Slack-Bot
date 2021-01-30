@@ -49,8 +49,8 @@ def message(payload):
         else:
             message_counter[user_id] = 1
 
-        # if text[-1] == '?':
-        #     client.chat_postMessage(channel=channel_id, text=text)
+        if text[-1] == '?':
+            client.chat_postMessage(channel=channel_id, text=text)
 
 
 @app.route('/mc', methods=['POST'])
