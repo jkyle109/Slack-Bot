@@ -12,6 +12,7 @@ from slackeventsapi import SlackEventAdapter
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
+PORT = int(os.environ["PATH"]) | 6969
 SIGNING_SECRET = os.environ['SIGNING_SECRET']
 SLACK_TOKEN = os.environ['SLACK_TOKEN']
 WEBHOOK_URL = os.environ['WEBHOOK_URL']
@@ -64,4 +65,4 @@ def message_count():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=PORT, host="0.0.0.0")
