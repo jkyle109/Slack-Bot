@@ -26,7 +26,7 @@ slack_event_adapter = SlackEventAdapter(
 client = slack.WebClient(token=SLACK_TOKEN)
 
 # connect the bot to the channel in Slack Channel
-client.chat_postMessage(channel='#jons-hideout', text='Ready')
+client.chat_postMessage(channel='#jons-hideout', text="I'm Ready!")
 # test_data = {'text': 'I\'m Ready!'}
 # requests.post(WEBHOOK_URL, json.dumps(test_data))
 
