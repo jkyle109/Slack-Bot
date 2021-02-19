@@ -103,7 +103,8 @@ def message(payload):
                         }
                     ]
                 }
-                client.chat_postMessage(channel=channel_id, attachment=message)
+                client.chat_postMessage(
+                    channel=channel_id, attachments=message)
 
 
 @app.route('/mc', methods=['POST'])
