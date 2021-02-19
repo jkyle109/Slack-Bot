@@ -17,6 +17,7 @@ HOST = os.environ.get('HOST', None)
 SIGNING_SECRET = os.environ['SIGNING_SECRET']
 SLACK_TOKEN = os.environ['SLACK_TOKEN']
 WEBHOOK_URL = os.environ['WEBHOOK_URL']
+apiKey = os.environ['API_KEY']
 
 app = Flask(__name__)
 slack_event_adapter = SlackEventAdapter(
