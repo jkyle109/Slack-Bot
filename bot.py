@@ -103,7 +103,7 @@ def message(payload):
                         }
                     ]
                 }
-                client.chat_postEphemeral(message)
+                client.chat_postEphemeral(content=message)
 
 
 @app.route('/mc', methods=['POST'])
