@@ -69,6 +69,7 @@ def message(payload):
                 country = data["sys"]["country"]
                 time = data["dt"]
                 message = {
+                    "channel": channel_id,
                     "attachments": [
                         {
                             "color": "#",
