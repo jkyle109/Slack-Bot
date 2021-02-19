@@ -72,6 +72,7 @@ def message(payload):
                     "channel": channel_id,
                     "attachments": [
                         {
+                            "text": "",
                             "color": "#",
                             "title": "Weather in {}, {}:".format(city, country),
                             "fields": [
