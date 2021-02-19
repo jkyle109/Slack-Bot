@@ -70,30 +70,29 @@ def message(payload):
                 time = data["dt"]
                 message = json.dumps([
                     {
-                        "text": "",
                         "color": "#",
                         "title": "Weather in {}, {}:".format(city, country),
                         "fields": [
-                                {
-                                    "title": "Temperature:",
-                                    "value": "It is {} and feels like {}.".format(temp, feels_temp),
-                                    "short": True
-                                },
                             {
-                                    "title": "Description:",
-                                    "value": weather_des,
-                                    "short": True
-                                },
+                                "title": "Temperature:",
+                                "value": "It is {} and feels like {}.".format(temp, feels_temp),
+                                "short": True
+                            },
                             {
-                                    "title": "Humidity:",
-                                    "value": humidity,
-                                    "short": True
-                                },
+                                "title": "Description:",
+                                "value": weather_des,
+                                "short": True
+                            },
                             {
-                                    "title": "Atmospheric Pressure:",
-                                    "value": pressure,
-                                    "short": True
-                                }
+                                "title": "Humidity:",
+                                "value": humidity,
+                                "short": True
+                            },
+                            {
+                                "title": "Atmospheric Pressure:",
+                                "value": pressure,
+                                "short": True
+                            }
                         ],
                         "thumb_url": weather_icon,
                         "footer": "OpenWeather.org",
@@ -102,7 +101,7 @@ def message(payload):
                     }
                 ])
                 client.chat_postMessage(
-                    channel=channel_id, attachments=message, text="")
+                    channel=channel_id, attachments=message)
 
 
 @app.route('/mc', methods=['POST'])
