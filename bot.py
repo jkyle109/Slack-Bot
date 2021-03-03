@@ -28,12 +28,14 @@ client.chat_postMessage(channel='#test-test', text="I'm Ready!")
 
 @slack_event_adapter.on('message')
 def message(payload):
-    event = payload.get('event', {})
+    print("idk")
+    event = payload.get('event')
     channel_id = event.get('channel')
     user_id = event.get('user')
     text = event.get('text')
 
     if BOT_ID != user_id:
+        print("warm")
         if text[-1] == '?':
             client.chat_postMessage(channel=channel_id, text=text)
         else:
