@@ -23,19 +23,15 @@ client = slack.WebClient(token=os.environ['SLACK_TOKEN'])
 BOT_ID = client.api_call("auth.test")['user_id']
 apiKey = os.environ['API_KEY']
 
-client.chat_postMessage(channel='#test-test', text="I'm Ready!")
-
 
 @slack_event_adapter.on('message')
 def message(payload):
-    print("idk")
-    event = payload.get('event')
+    event = payload.get('event', {})
     channel_id = event.get('channel')
     user_id = event.get('user')
     text = event.get('text')
 
     if BOT_ID != user_id:
-        print("warm")
         if text[-1] == '?':
             client.chat_postMessage(channel=channel_id, text=text)
         else:
